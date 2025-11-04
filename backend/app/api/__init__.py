@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from decimal import Decimal
 from http import HTTPStatus
 
@@ -234,14 +234,11 @@ def register_routes(app):
             raise APIError("No available copies for this book", status_code=409)
 
         issued_at = datetime.utcnow()
-        due_at = issued_at + timedelta(days=14)
-
         transaction = Transaction(
             book=book,
             member=member,
             status="issued",
             issued_at=issued_at,
-            due_at=due_at,
         )
 
         book.available_copies -= 1
