@@ -135,7 +135,7 @@ function App() {
       }
       resetBookForm();
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to save book");
+      window.alert(error.response?.data?.error?.message || "Failed to save book");
     }
   };
 
@@ -144,7 +144,7 @@ function App() {
     try {
       await loadBooks(value ? { search: value } : undefined);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to search books");
+      window.alert(error.response?.data?.error?.message || "Failed to search books");
     }
   };
 
@@ -153,7 +153,7 @@ function App() {
     try {
       await deleteBook(book.id);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to delete book");
+      window.alert(error.response?.data?.error?.message || "Failed to delete book");
     }
   };
 
@@ -171,7 +171,7 @@ function App() {
       }
       resetMemberForm();
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to save member");
+      window.alert(error.response?.data?.error?.message || "Failed to save member");
     }
   };
 
@@ -180,7 +180,7 @@ function App() {
     try {
       await deleteMember(member.id);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to delete member");
+      window.alert(error.response?.data?.error?.message || "Failed to delete member");
     }
   };
 
@@ -193,7 +193,7 @@ function App() {
       });
       setIssueForm(defaultIssueForm);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to issue book");
+      window.alert(error.response?.data?.error?.message || "Failed to issue book");
     }
   };
 
@@ -209,7 +209,7 @@ function App() {
       );
       setReturnForm(defaultReturnForm);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to process return");
+      window.alert(error.response?.data?.error?.message || "Failed to process return");
     }
   };
 
@@ -221,7 +221,7 @@ function App() {
       window.alert(`Imported ${imported} books (duplicates skipped: ${duplicates})`);
       setImportForm(defaultImportForm);
     } catch (error) {
-      window.alert(error.response?.data?.error || "Failed to import books");
+      window.alert(error.response?.data?.error?.message || "Failed to import books");
     }
   };
 
