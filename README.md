@@ -52,5 +52,8 @@ Vite serves the UI on `http://localhost:5173` and proxies anything under `/api` 
 | POST | `/api/imports/books` | import books from Frappe |
 
 ## Screenshots
-Images live in `frontend/screenshots/`. 
+Images live in `frontend/screenshots/`.
+
+![Dashboard](frontend/screenshots/dashboard.png)
+![Issue Flow](frontend/screenshots/issue-flow.png)
 
