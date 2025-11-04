@@ -15,6 +15,9 @@ def create_app(config_object: type[Config] = Config) -> Flask:
     register_error_handlers(app)
     register_api_blueprints(app)
 
+    with app.app_context():
+        db.create_all()
+
     return app
 
 
